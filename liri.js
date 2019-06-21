@@ -53,3 +53,23 @@ function runBandsInTown(input) {
         }
     });
 };
+
+function runOMDB(input) {
+    var request2 = require('request');
+    request2('http://www.omdbapi.com/?apikey=trilogy&t=' + input, function (error, response, body) {
+        if (error) {
+            console.log('error:', error);
+            console.log('statusCode:', response && response.statusCode);
+        } else {
+            movie = JSON.parse(body);
+            console.log("\n\nTitle: " + movie.Title);
+            console.log("Year: " + movie.Year);
+            console.log("IMDB Rating: " + movie.imdbRating);
+            console.log("Rotten Tomatoes Rating: " + movie.Ratings[1].Value);
+            console.log("Country: " + movie.Country);
+            console.log("Language: " + movie.Language);
+            console.log("Plot: " + movie.Plot);
+            console.log("Actors: " + movie.Actors);
+        }
+    });
+};
