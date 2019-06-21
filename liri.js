@@ -5,36 +5,28 @@ var moment = require('moment');
 var fs = require('fs');
 var Spotify = require('node-spotify-api');
 var spotify = new Spotify(keys.spotify);
+var command = process.argv[2];
 
-if (!process.argv[3] === undefined) {
-    var input = process.argv.slice(3).join(' ');
-}
-runLiRi(command, input);
+var input = process.argv.slice(3).join(' ');
+
+
+runLiRi(command, input)
 function runLiRi(command, input) {
     switch (command) {
         case 'concert-this':
-            input === undefined ? runBandsInTown("Odesza") :
-                runBandsInTown(input);
+            input ? runBandsInTown(input) : runBandsInTown("Odesza")
             break;
         case 'spotify-this-song':
-            input === undefined ? runSpotify("The Sign") :
-                runSpotify(input);
+            input ? runSpotify(input) : runSpotify(" Ace of Base The Sign")
             break;
         case 'movie-this':
-            input === undefined ? runOMDB("Mr. Nobody'") :
-                runOMDB(input);
+            input ? runOMDB(input) : runOMDB("Mr. Nobody")
             break;
         case 'do-what-it-says':
             runRandom(command, input);
             break;
-        case 'help':
-            help();
-            break;
-        case undefined:
-        help();
-            break;
         default:
-            console.log("If you are having trouble type in help")
+            help()
     };
 };
 
