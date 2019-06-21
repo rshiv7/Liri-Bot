@@ -1,6 +1,7 @@
 # Liri-Bot
 
 ![alt text](./Liri_Bot.png "Liri_Bot")
+![alt text](./Liri.gif "Liri_Bot")
 
 LiriBot LIRI is a Language Interpretation and Recognition Interface. LIRI will be a command line node app that takes in parameters and gives you back data.
 
