@@ -98,6 +98,19 @@ function runOMDB(input) {
         }
     });
 };
+function runRandom(command, input) {
+
+    fs.readFile("random.txt", "utf8", function (error, data) {
+        if (error) {
+            console.log(error)
+        }
+        data = data.split('"');
+        var dataArr = data;
+        command = dataArr[0].split(',')[0];
+        input = dataArr[1];
+        runLiRi(command, input);
+    });
+};
 
 function help() {
     console.log(
