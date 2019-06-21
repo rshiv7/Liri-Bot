@@ -34,13 +34,9 @@ function runLiRi(command, input) {
         help();
             break;
         default:
-            console.log('If your having trouble type in help')
+            console.log("If you are having trouble type in help")
     };
 };
-
-
-
-
 
 
 function runSpotify(input) {
@@ -109,4 +105,17 @@ function runOMDB(input) {
             console.log("Actors: " + movie.Actors);
         }
     });
+};
+
+function help() {
+    console.log(
+        'In order to run Liri please ask the following\n' +
+        'For concerts around you please use the command\n' +
+        'concert-this "artist", such as concert-this macklemore\n' +
+        'For songs you want info about please use the command\n' +
+        'spotify-this-song "song name here", such as spotify-this-song welcome to the party\n' +
+        'For movies that you want to find more info about please use the command\n' +
+        'movie-this "movie name", such as movie-this Deadpool 2\n' +
+        'For a random command please use\n' +
+        'do-what-it-says\n');
 };
